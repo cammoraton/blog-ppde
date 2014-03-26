@@ -8,7 +8,7 @@ class simple_puppetmaster::packages {
 class simple_puppetmaster::services {
   service { 'httpd': 
     ensure => running, 
-    enable => true, 
+    enable => false, 
     require => Package['httpd'], 
   }
   service { 'puppetmaster': 
