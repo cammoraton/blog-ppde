@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "puppet" do |puppetmaster|
     puppetmaster.vm.box = "example-PuppetMaster"
     puppetmaster.vm.box_url = "./boxes/puppetmaster.box",
-                              "./boxes/centos.box"
+      "./boxes/centos.box"
     
     puppetmaster.vm.hostname = "puppet.example.com"
     puppetmaster.vm.network "private_network", 
@@ -43,7 +43,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "centos" do |centos|
     centos.vm.box = "example-CentOS6.5"
-    centos.vm.box_url = "./boxes/centos.box"
+    centos.vm.box_url = "./boxes/centos.box",
+      "http://puppet-vagrant-boxes.puppetlabs.com/centos-65-x64-virtualbox-puppet.box"
 
     centos.vm.hostname = "centos6.example.com"
     centos.vm.network "private_network", 
@@ -64,7 +65,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  
   config.vm.define "ubuntu" do |ubuntu|
     ubuntu.vm.box = "example-Ubuntu12.04"
-    ubuntu.vm.box_url = "boxes/ubuntu.box"
+    ubuntu.vm.box_url = "boxes/ubuntu.box",
+      "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
 
     ubuntu.vm.hostname = "ubuntu12.example.com"
     ubuntu.vm.network "private_network", 
